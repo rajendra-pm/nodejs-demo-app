@@ -2,25 +2,19 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout repository
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Step 2: Debug Docker username (optional, ensures secrets are read)
-      - name: Debug Docker username
-        run: |
-          echo "Docker username: '${{ secrets.DOCKER_USERNAME }}'"
-          if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then
-            echo "DOCKER_USERNAME is empty!"
-            exit 1
-          fi
+      # # Step 2: Debug Docker username (optional)
+      # - name: Debug Docker username
+      #   run: echo "Docker username: ${{ secrets.DOCKER_USERNAME }}"
 
       # Step 3: Log in to DockerHub
       - name: Log in to DockerHub
@@ -28,8 +22,8 @@ jobs:
 
       # Step 4: Build Docker image
       - name: Build Docker image
-        run: docker build -t rajendra3/nodejs-demo-app:latest .
+        run: docker build --progress=plain -t rajendra3/nodejs-demo-app:latest .
 
-      # Step 5: Push Docker image
+      # Step 5: Push Docker image to DockerHub
       - name: Push Docker image
         run: docker push rajendra3/nodejs-demo-app:latest
