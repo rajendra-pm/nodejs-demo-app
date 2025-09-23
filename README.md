@@ -65,3 +65,29 @@ DOCKERHUB_USERNAME → DockerHub username
 DOCKERHUB_TOKEN → DockerHub Personal Access Token (with write access)
 
 Note: Do not hardcode credentials in the workflow. Use GitHub Secrets to keep them secure.
+
+Screenshots
+## Screenshots
+
+### Pipeline Success
+![Pipeline](screenshots/pipeline.png)
+<img width="1892" height="832" alt="image" src="https://github.com/user-attachments/assets/eb6a2d88-db5f-4c8e-9d80-43a220be52ba" />
+
+### DockerHub Image
+![DockerHub](screenshots/dockerhub.png)
+<img width="1881" height="682" alt="image" src="https://github.com/user-attachments/assets/390d7889-9c77-4d41-b7ea-8e57b0291dd6" />
+
+### Running App
+![App](screenshots/app.png)
+<img width="1908" height="961" alt="image" src="https://github.com/user-attachments/assets/648745e5-7ff4-42f0-ad7a-f0f9739c8f22" />
+
+Summary
+
+This project shows a fully automated CI/CD pipeline for a Node.js application with Docker.
+It can be extended for production deployment or used as a template for future projects.
+
+
+
+
+
+
