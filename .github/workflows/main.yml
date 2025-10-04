@@ -33,10 +33,10 @@ jobs:
         run: docker --version
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "1rajendrapm" --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "rajendra3" --password-stdin
 
       - name: Build Docker image
-        run: docker build -t 1rajendrapm/nodejs-demo-app:latest .
+        run: docker build -t rajendra3/nodejs-demo-app:latest .
 
       - name: Push Docker image
-        run: docker push 1rajendrapm/nodejs-demo-app:latest
+        run: docker push rajendra3/nodejs-demo-app:latest
